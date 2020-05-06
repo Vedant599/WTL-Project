@@ -19,7 +19,7 @@
     <meta name="author" content="">
     <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
 
-    <title>Customers</title>
+    <title>Add Customer</title>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 
@@ -135,50 +135,29 @@
               <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="admin_dashboard.php">Dashboard</a></li>
                 <li class="breadcrumb-item"><a href="customers.php">Customers</a></li>
+                <li class="breadcrumb-item"><a href="add_customers.php">Add Customer</a></li>
               </ol>
           </nav>
           <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
             
-          <h1 class="h2">Customers</h1>
+          <h1 class="h2">Add Customer</h1>
             <div class="btn-toolbar mb-2 mb-md-0">
               <div class="btn-group mr-2">
               </div>
-              <a class="btn btn-primary" href="add_customer.php">Add Customer</a>
+<!--               <a class="btn btn-primary" href="add_customer.php">Add Customer</a> -->
             </div>
           </div>
-
-          <table id="example" class="display" style="width:100%">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>UserName</th>
-                <th>Email</th>               
-            </tr>
-        </thead>
-          <tbody>
-            <?php 
-            include('connection/db.php');
-            $query=mysqli_query($conn,"select * from admin_login");
-            while($row=mysqli_fetch_array($query))
-            {
-             ?>
-            <tr>
-                <td><?php echo $row['id']; ?></td>
-                <td><?php echo $row['admin_username']; ?></td>
-                <td><?php echo $row['admin_email']; ?></td>
-            </tr>
-          <?php } ?>
-        </tbody>
-        <tfoot>
-            <tr>
-                <th>ID</th>
-                <th>UserName</th>
-                <th>Email</th> 
-            </tr>
-        </tfoot>
-    </table>
-
-
+          <div>
+            <form>
+              <div class="form-group">
+                <label for="Customer Email"></label>
+                <input type="email" class="form-control" name="email" id="email" placeholder="Enter Email" required>
+              </div><div class="form-group">
+                <label for="Customer Email"></label>
+                <input type="email" class="form-control" name="email" id="email" placeholder="Enter Email" required>
+              </div>
+            </form>
+          </div>
           <canvas class="my-4" id="myChart" width="900" height="380"></canvas>
 
         </main>
